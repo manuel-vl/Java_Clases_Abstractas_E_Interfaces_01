@@ -1,6 +1,6 @@
 package document_types;
 
-public class Libro {
+public class Libro implements Documento<Libro>{
     private Integer numeroPaginas;
     private String nombreAutor;
     private String titulo;
@@ -46,5 +46,20 @@ public class Libro {
 
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro {" +
+                "numeroPaginas=" + numeroPaginas +
+                ", nombreAutor='" + nombreAutor + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", genero='" + genero + '\'' +
+                '}';
+    }
+
+    @Override
+    public String imprimirInformacion(Libro doc) {
+        return Documento.super.imprimirInformacion(doc);
     }
 }

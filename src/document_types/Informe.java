@@ -1,6 +1,6 @@
 package document_types;
 
-public class Informe {
+public class Informe implements Documento<Informe> {
     private String texto;
     private Integer cantidadPaginas;
     private String autor;
@@ -45,5 +45,20 @@ public class Informe {
 
     public void setRevisor(String revisor) {
         this.revisor = revisor;
+    }
+
+    @Override
+    public String toString() {
+        return "Informe {" +
+                "texto='" + texto + '\'' +
+                ", cantidadPaginas=" + cantidadPaginas +
+                ", autor='" + autor + '\'' +
+                ", revisor='" + revisor + '\'' +
+                '}';
+    }
+
+    @Override
+    public String imprimirInformacion(Informe doc) {
+        return Documento.super.imprimirInformacion(doc);
     }
 }

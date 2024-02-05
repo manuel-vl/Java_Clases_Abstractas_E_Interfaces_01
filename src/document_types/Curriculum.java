@@ -1,6 +1,8 @@
 package document_types;
 
-public class Curriculum {
+import java.util.Arrays;
+
+public class Curriculum implements Documento<Curriculum>{
     private String nombre;
     private String dni;
     private Integer edad;
@@ -46,5 +48,20 @@ public class Curriculum {
 
     public void setHabilidades(String[] habilidades) {
         this.habilidades = habilidades;
+    }
+
+    @Override
+    public String toString() {
+        return "Curriculum {" +
+                "nombre='" + nombre + '\'' +
+                ", dni='" + dni + '\'' +
+                ", edad=" + edad +
+                ", habilidades=" + Arrays.toString(habilidades) +
+                '}';
+    }
+
+    @Override
+    public String imprimirInformacion(Curriculum doc) {
+        return Documento.super.imprimirInformacion(doc);
     }
 }
